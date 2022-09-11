@@ -1,7 +1,8 @@
 import React, { useState } from 'react'
 import MovieService from 'services/MovieService'
 import { validateYouTubeUrl } from 'utils/function'
-import { toast } from 'react-toastify'
+import { ToastContainer, toast } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
 import './ShareMovie.scss'
 
 const ShareMovie = () => {
@@ -49,6 +50,7 @@ const ShareMovie = () => {
           <button className="Share-Movie-button" onClick={onShareMovie} disabled={loading}>Share</button>
         </div>
       </div>
+      <ToastContainer />
     </div>
   )
 }

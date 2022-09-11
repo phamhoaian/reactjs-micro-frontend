@@ -25,6 +25,12 @@
     "react-dom": "^18.2.0",
     "react-toastify": "^9.0.8"
   },
+  "peerDependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "query-string": "^7.1.1",
+    "react-toastify": "^9.0.8"
+  },
   "devDependencies": {
     "@babel/core": "^7.19.0",
     "@babel/preset-env": "^7.19.0",

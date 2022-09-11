@@ -2,6 +2,7 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const Dotenv = require('dotenv-webpack');
 const ModuleFederationPlugin = require('webpack').container.ModuleFederationPlugin;
 const path = require("path");
+const deps = require("./package.json").dependencies;
 
 module.exports = {
   entry: "./src/index.js",
@@ -23,6 +24,25 @@ module.exports = {
       exposes: {
         './shareMovie': './src/components/ShareMovie',
       },
+      shared: {
+        ...deps,
+        react: {
+          singleton: true,
+          requiredVersion: deps.react
+        },
+        "react-dom": {
+          singleton: true,
+          requiredVersion: deps["react-dom"]
+        },
+        "query-string": {
+          singleton: true,
+          requiredVersion: deps["query-string"]
+        },
+        "react-toastify": {
+          singleton: true,
+          requiredVersion: deps["react-toastify"]
+        },
+      }
     }),
   ],
   resolve: {
